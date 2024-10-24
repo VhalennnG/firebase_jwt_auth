@@ -15,7 +15,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 // view engine
-app.set("view engine", "ejs");
+// app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 // Start server in local
 // app.listen(3000, () => {
@@ -43,6 +44,11 @@ app.get("/read-cookies", (req, res) => {
   const cookies = req.cookies;
   console.log(cookies);
   res.json(cookies);
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
 });
 
 module.exports = app;
