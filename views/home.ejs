@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="/home.css" />
+  </head>
+  <body>
+    <div class="component">
+      <ul class="align">
+        <li>
+          <figure class="book">
+            <!-- Front -->
+
+            <ul class="hardcover_front">
+              <li>
+                <div class="coverDesign black">
+                  <!--  -->
+                  <h1><i class="uil uil-github"></i></h1>
+                  <h1></h1>
+                  <p></p>
+                </div>
+              </li>
+              <li></li>
+            </ul>
+
+            <!-- Pages -->
+
+            <ul class="page">
+              <li></li>
+              <li>
+                <% if(user) { %>
+                <a class="btn" href="/logout">Log out</a>
+                <% } else { %>
+                <a class="btn" href="/auth">Log in</a>
+                <% } %>
+              </li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+
+            <!-- Back -->
+
+            <ul class="hardcover_back">
+              <li></li>
+              <li></li>
+            </ul>
+            <ul class="book_spine">
+              <li></li>
+              <li></li>
+            </ul>
+
+            <% if(user) { %>
+            <figcaption>
+              <h1>Hello <%= user.username %>!</h1>
+              <span
+                >Please click <a class="link" href="/to-space">enter</a></span
+              >
+            </figcaption>
+            <% } else { %>
+            <figcaption>
+              <h1>Hello</h1>
+              <span>Open The Book</span>
+            </figcaption>
+            <% } %>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
