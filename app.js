@@ -17,10 +17,10 @@ app.use(cors());
 // view engine
 app.set("view engine", "ejs");
 
-// Start server
-app.listen(3000, () => {
-  console.log("Server is running on port 4000");
-});
+// Start server in local
+// app.listen(3000, () => {
+//   console.log("Server is running on port 4000");
+// });
 
 // routes
 app.get("*", checkUser);
@@ -44,3 +44,5 @@ app.get("/read-cookies", (req, res) => {
   console.log(cookies);
   res.json(cookies);
 });
+
+module.exports = app;
