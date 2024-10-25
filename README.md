@@ -54,7 +54,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </details>
 
@@ -125,12 +125,6 @@ _Below is an example of how you can instruct your audience on installing and set
      universe_domain: process.env.FIREBASE_UNIVERSE_DOMAIN,
    };
    ```
-
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-..
 
 <!-- CONTACT -->
 
