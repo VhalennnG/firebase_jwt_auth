@@ -11,8 +11,8 @@ const path = require("path");
 app.use(express.json());
 app.use(cookieParser());
 
-// app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(path.resolve(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.resolve(__dirname, "public")));
 
 app.use(cors());
 
@@ -21,9 +21,11 @@ app.set("view engine", "ejs");
 // app.set("views", path.join(__dirname, "views"));
 
 // Start server in local
-// app.listen(3000, () => {
-//   console.log("Server is running on port 3000");
-// });
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 // routes
 app.get("*", checkUser);
@@ -53,4 +55,4 @@ app.use((err, req, res, next) => {
   res.status(500).send("Something wrong!");
 });
 
-module.exports = app;
+// module.exports = app;
