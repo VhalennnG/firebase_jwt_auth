@@ -74,7 +74,7 @@ Secure backend authentication system using Firebase for user management and JWT 
 ### Built With
 
 - [![EJS][EJS]][JWT]
-- [![Node][Node.js]][Vite-url]
+- [![Node][Node.js]][Node-url]
 - [![Express][Express]][Express-url]
 - [![Firebase][Firebase]][Firebase-url]
 - [![JWT][JWT]][JWT]
@@ -152,5 +152,5 @@ Project Link:
 [EJS-url]: https://ejs.co/
 [Firebase]: https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white
 [Firebase-url]: https://firebase.google.com/
-[JWT]: https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jwt&logoColor=white
+[JWT]: https://img.shields.io/badge/JWT-990000?style=for-the-badge&logo=jsonwebtokens&logoColor=white
 [JWT-url]: https://jwt.io/
