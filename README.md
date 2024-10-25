@@ -132,7 +132,15 @@ _Below is an example of how you can instruct your audience on installing and set
 
 Vhalen_G - [vhalentinog@gmail.com](mailto:vhalentinog@gmail.com)
 
-Project Link:
+Project Link: [Firebase Auth with JWT](https://github.com/VhalennnG/firebase_jwt_auth)
+
+## Other Credits
+
+[Fivera](https://codepen.io/fivera/details/kQJzxP)
+
+[Ivan Grozdic](https://codepen.io/ig_design/details/KKVQpVP)
+
+[anhat.dev](https://codepen.io/nhatanh17/details/VwwVmLK)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
