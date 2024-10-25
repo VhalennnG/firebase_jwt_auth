@@ -1,16 +1,18 @@
-const express = require("express");
 const cors = require("cors");
-const authRoutes = require("./routes/authRoutes");
+const express = require("express");
 const cookieParser = require("cookie-parser");
+const authRoutes = require("./routes/authRoutes");
 const { requireAuth, checkUser } = require("./middleware/authMiddleware");
 
 const app = express();
 const path = require("path");
+const favicon = require("serve-favicon");
 
 // middleware
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(favicon(path.join(__dirname, "public", "favicon.png")));
 app.use(express.static(path.join(__dirname, "public")));
 // app.use(express.static(path.resolve(__dirname, "public")));
 
