@@ -11,7 +11,9 @@ const path = require("path");
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.resolve(__dirname, "public")));
+
 app.use(cors());
 
 // view engine
@@ -19,9 +21,9 @@ app.set("view engine", "ejs");
 // app.set("views", path.join(__dirname, "views"));
 
 // Start server in local
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
+// app.listen(3000, () => {
+//   console.log("Server is running on port 3000");
+// });
 
 // routes
 app.get("*", checkUser);
