@@ -1,6 +1,45 @@
 const db = require("../config/dbConfig");
 const bcrypt = require("bcrypt");
 
+const checkUserIP = async (ip, callback) => {
+  const today = new Date().toISOString().slice(0, 10);
+
+  try {
+    const ipSnapshot = await db.collection("usersIP").doc(ip).get();
+
+    if (ipSnapshot.exists) {
+      const ipData = ipSnapshot.data();
+      if (ipData.lastRegistrationDate === today) {
+        if (ipData.accountCount >= 10) {
+          return callback(
+            new Error("Limit account creation reached for today")
+          );
+        } else {
+          await db
+            .collection("usersIP")
+            .doc(ip)
+            .update({
+              accountCount: ipData.accountCount + 1,
+            });
+        }
+      } else {
+        await db.collection("usersIP").doc(ip).set({
+          lastRegistrationDate: today,
+          accountCount: 1,
+        });
+      }
+    } else {
+      await db.collection("usersIP").doc(ip).set({
+        lastRegistrationDate: today,
+        accountCount: 1,
+      });
+    }
+    callback(null); // Tidak ada error
+  } catch (error) {
+    callback(error);
+  }
+};
+
 const validateEmail = (email) => {
   const re =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -100,4 +139,4 @@ const loginUser = async (email, password, callback) => {
   }
 };
 
-module.exports = { createUser, loginUser };
+module.exports = { checkUserIP, createUser, loginUser };

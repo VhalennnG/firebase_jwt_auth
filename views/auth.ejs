@@ -50,7 +50,7 @@
                             autocomplete="off" />
                           <i class="input-icon uil uil-at"></i>
                         </div>
-                        <div class="email error mt-1"></div>
+                        <div class="login-email error mt-1"></div>
                         <div class="form-group mt-2">
                           <input
                             type="password"
@@ -61,7 +61,7 @@
                             autocomplete="off" />
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        <div class="password error mt-1"></div>
+                        <div class="login-password error mt-1"></div>
                         <button class="btn mt-4">submit</button>
                       </form>
                     </div>
@@ -82,7 +82,7 @@
                             autocomplete="off" />
                           <i class="input-icon uil uil-user"></i>
                         </div>
-                        <div class="username error mt-1"></div>
+                        <div class="signup-username error mt-1"></div>
                         <div class="form-group mt-2">
                           <input
                             type="email"
@@ -93,7 +93,7 @@
                             autocomplete="off" />
                           <i class="input-icon uil uil-at"></i>
                         </div>
-                        <div class="email error mt-1"></div>
+                        <div class="signup-email error mt-1"></div>
                         <div class="form-group mt-2">
                           <input
                             type="password"
@@ -104,7 +104,7 @@
                             autocomplete="off" />
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        <div class="password error mt-1"></div>
+                        <div class="signup-password error mt-1"></div>
                         <button class="btn mt-4">submit</button>
                       </form>
                     </div>
@@ -126,8 +126,8 @@
     e.preventDefault();
 
     // Reset error
-    const emailError = document.querySelector(".email.error");
-    const passwordError = document.querySelector(".password.error");
+    const emailError = document.querySelector(".login-email.error");
+    const passwordError = document.querySelector(".login-password.error");
     emailError.textContent = "";
     passwordError.textContent = "";
 
@@ -162,9 +162,9 @@
     e.preventDefault();
 
     // Reset error
-    const usernameError = document.querySelector(".username.error");
-    const emailError = document.querySelector(".email.error");
-    const passwordError = document.querySelector(".password.error");
+    const usernameError = document.querySelector(".signup-username.error");
+    const emailError = document.querySelector(".signup-email.error");
+    const passwordError = document.querySelector(".signup-password.error");
     usernameError.textContent = "";
     emailError.textContent = "";
     passwordError.textContent = "";
