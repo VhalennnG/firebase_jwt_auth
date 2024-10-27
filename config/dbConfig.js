@@ -1,6 +1,7 @@
 require("dotenv").config();
 const admin = require("firebase-admin");
 
+// if (process.env.NODE_ENV !== "test") {
 const firebaseServiceAccount = {
   type: process.env.FIREBASE_TYPE,
   project_id: process.env.FIREBASE_PROJECT_ID,
@@ -29,5 +30,8 @@ db.collection("test")
   .catch((error) => {
     console.error("Error connecting to Firestore database:", error);
   });
+// } else {
+//   console.log("Skipping Firebase initialization in test mode");
+// }
 
 module.exports = db;

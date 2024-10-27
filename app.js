@@ -31,13 +31,6 @@ app.use(limiter);
 // view engine
 app.set("view engine", "ejs");
 
-// Start server in local
-const port = process.env.PORT || 4000;
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
 // routes
 app.get("*", checkUser);
 app.get("/", (req, res) => res.render("home"));
@@ -46,11 +39,10 @@ app.use(authRoutes);
 
 // cookies
 app.get("/set-cookies", (req, res) => {
-  res.cookie("newUser", false);
-  res.cookie("isEmployee", false, {
-    maxAge: 1000 * 60 * 60 * 24,
-    httpOnly: true,
-  });
+  // res.cookie("isEmployee", false, {
+  //   maxAge: 1000 * 60 * 60 * 24,
+  //   httpOnly: true,
+  // });
   res.send("you got this cookie");
 });
 
@@ -64,3 +56,5 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something wrong!");
 });
+
+module.exports = app;
